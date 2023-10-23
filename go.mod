@@ -8,7 +8,7 @@ require (
 	github.com/gopacket/gopacket v1.1.1
 	github.com/khulnasoft-lab/package-feeds v0.0.0-20230904233013-d0a163860c3b
 	github.com/package-url/packageurl-go v0.1.2
-	github.com/texttheater/golang-levenshtein/levenshtein v0.0.0-20200805054039-cae8b0eaed6c
+	github.com/texttheater/golang-levenshtein/levenshtein 3d00ed831923
 	go.uber.org/zap v1.26.0
 	go.uber.org/zap/exp v0.2.0
 	gocloud.dev v0.34.0
