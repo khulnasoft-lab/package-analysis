@@ -5,7 +5,7 @@
 # NO_PUBKEY B53DC80D13EDEF05 [kubectl]
 
 # buildpack-deps 22.04 [ubuntu]
-FROM buildpack-deps@sha256:d76488a56e1e85930e053b794daa9f990636565bf0de54903d65d93c43c3cad5 AS image
+FROM buildpack-deps@sha256:df890bf5d953d2a13e89ff6e3c80d8f78105658a606c354f41cd261ff3dc8a2a AS image
 
 # All intermediate files during first-stage build are stored under /setup
 # This directory is removed before second-stage build (i.e. copying runtime files to an empty image)
