@@ -12,7 +12,7 @@ require (
 	go.uber.org/zap v1.26.0
 	go.uber.org/zap/exp v0.2.0
 	gocloud.dev v0.35.0
-	gocloud.dev/pubsub/kafkapubsub v0.34.0
+	gocloud.dev/pubsub/kafkapubsub v0.35.0
 	golang.org/x/exp v0.0.0-20231219180239-dc181d75b848
 	google.golang.org/api v0.151.0
 	google.golang.org/grpc v1.59.0
@@ -25,7 +25,7 @@ require (
 	cloud.google.com/go/compute/metadata v0.2.3 // indirect
 	cloud.google.com/go/iam v1.1.5 // indirect
 	cloud.google.com/go/storage v1.35.1 // indirect
-	github.com/Shopify/sarama v1.38.1 // indirect
+	github.com/IBM/sarama v1.42.1 // indirect
 	github.com/aws/aws-sdk-go v1.48.3 // indirect
 	github.com/aws/aws-sdk-go-v2 v1.23.1 // indirect
 	github.com/aws/aws-sdk-go-v2/aws/protocol/eventstream v1.5.1 // indirect
@@ -47,7 +47,7 @@ require (
 	github.com/aws/aws-sdk-go-v2/service/sts v1.25.4 // indirect
 	github.com/aws/smithy-go v1.17.0 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
-	github.com/eapache/go-resiliency v1.3.0 // indirect
+	github.com/eapache/go-resiliency v1.4.0 // indirect
 	github.com/eapache/go-xerial-snappy v0.0.0-20230731223053-c322873962e3 // indirect
 	github.com/eapache/queue v1.1.0 // indirect
 	github.com/golang/groupcache v0.0.0-20210331224755-41bb18bfe9da // indirect
@@ -67,11 +67,10 @@ require (
 	github.com/jcmturner/gokrb5/v8 v8.4.4 // indirect
 	github.com/jcmturner/rpc/v2 v2.0.3 // indirect
 	github.com/jmespath/go-jmespath v0.4.0 // indirect
-	github.com/klauspost/compress v1.16.7 // indirect
+	github.com/klauspost/compress v1.17.3 // indirect
 	github.com/pierrec/lz4/v4 v4.1.18 // indirect
 	github.com/rcrowley/go-metrics v0.0.0-20201227073835-cf1acfcdf475 // indirect
 	github.com/sirupsen/logrus v1.9.3 // indirect
-	github.com/stretchr/testify v1.8.2 // indirect
 	go.opencensus.io v0.24.0 // indirect
 	go.uber.org/multierr v1.11.0 // indirect
 	golang.org/x/crypto v0.17.0 // indirect
