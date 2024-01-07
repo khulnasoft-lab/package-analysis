@@ -1,4 +1,4 @@
-FROM golang:1.21.0@sha256:12359f96c43077803959dab88ce60c87cd2543f3b907bf54a34a5104270f404f as build
+FROM golang:1.21.5@sha256:135ba6c2ae2a9a022f53f3eee24ef213bc62e876811cd9582b91045168206873 as build
 
 # Note: Dockerfile uses paths relative to the top-level project directory,
 # so it should be built from that directory, i.e:
