@@ -3,7 +3,7 @@ module github.com/khulnasoft-lab/package-analysis
 go 1.21
 
 require (
-	cloud.google.com/go/pubsub v1.35.0
+	cloud.google.com/go/pubsub v1.36.0
 	github.com/blendle/zapdriver v1.3.1
 	github.com/gopacket/gopacket v1.1.1
 	github.com/khulnasoft-lab/package-feeds v0.0.0-20231023053939-03befcbafa96
