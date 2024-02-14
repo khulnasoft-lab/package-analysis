@@ -1,7 +1,7 @@
 version: "3"
 services:
   zookeeper:
-    image: confluentinc/cp-zookeeper@sha256:c83977656ae4bb755a6016887b118f171c6b8cf99d03a95e84efdfe7ae5bd454
+    image: confluentinc/cp-zookeeper@sha256:6a0822643ceb4725db4f24bf2d228eee39bb5ade88f586449d87263cbc81bc97
     ports:
       - 2181:2181
     healthcheck:
