@@ -37,7 +37,7 @@ services:
       KAFKA_offsets_topic_replication_factor: 1
 
   minio:
-    image: minio/minio@sha256:68622c3e49dd98fbbcb8200729297207759d52e3b02d2ed908c1a7ff3b83f3f7
+    image: minio/minio@sha256:88af73451c7981406c1477d9fb99543be3ef2d8aea847fcf8667a38c323f217c
     hostname: minio
     ports:
       - 9000:9000
