@@ -6,7 +6,7 @@ PREFIX := $(abspath $(dir $(abspath $(lastword $(MAKEFILE_LIST)))))
 SANDBOX_DIR := $(PREFIX)/sandboxes
 
 # Registry for Docker images built and used by package analysis
-REGISTRY := gcr.io/khulnasoft-lab
+REGISTRY := gcr.io/ossf
 
 # If RELEASE_TAG environment variable is not specified, images will be tagged
 # as 'latest' which is equivalent to just tagging without specifying a version

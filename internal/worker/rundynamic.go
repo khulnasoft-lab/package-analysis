@@ -30,7 +30,7 @@ import (
 )
 
 // defaultDynamicAnalysisImage is container image name of the default dynamic analysis sandbox
-const defaultDynamicAnalysisImage = "gcr.io/khulnasoft-lab/dynamic-analysis"
+const defaultDynamicAnalysisImage = "gcr.io/ossf/dynamic-analysis"
 
 /*
 DynamicAnalysisResult holds all data and status from RunDynamicAnalysis.

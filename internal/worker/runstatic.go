@@ -18,7 +18,7 @@ import (
 )
 
 // defaultStaticAnalysisImage is the default Docker image for the static analysis sandbox.
-const defaultStaticAnalysisImage = "gcr.io/khulnasoft-lab/static-analysis"
+const defaultStaticAnalysisImage = "gcr.io/ossf/static-analysis"
 
 // staticAnalyzeBinary is the absolute path to the compiled staticanalyze.go binary
 // inside the static analysis sandbox (see sandboxes/staticanalysis/Dockerfile).

@@ -55,7 +55,7 @@ services:
       retries: 3
 
   analysis:
-    image: gcr.io/khulnasoft-lab/analysis:latest
+    image: gcr.io/ossf/analysis:latest
     privileged: true
     ports:
       - 6060:6060
@@ -82,7 +82,7 @@ services:
         condition: service_healthy
 
   scheduler:
-    image: gcr.io/khulnasoft-lab/scheduler:latest
+    image: gcr.io/ossf/scheduler:latest
     entrypoint: "/usr/local/bin/scheduler"
     depends_on:
       kafka:
@@ -94,7 +94,7 @@ services:
       KAFKA_BROKERS: kafka:9092
 
   feeds:
-    image: gcr.io/khulnasoft-lab/scheduled-feeds:latest
+    image: gcr.io/ossf/scheduled-feeds:latest
     restart: on-failure
     ports:
       - 8080:8080
