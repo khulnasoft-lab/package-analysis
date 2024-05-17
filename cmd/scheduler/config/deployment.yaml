@@ -19,8 +19,8 @@ spec:
         image: ko://github.com/khulnasoft-lab/package-analysis/cmd/scheduler
         env:
         - name: OSSMALWARE_SUBSCRIPTION_URL
-          value: gcppubsub://projects/ossf-malware-analysis/subscriptions/feed-subscription
+          value: gcppubsub://projects/khulnasoft-malware-analysis/subscriptions/feed-subscription
         - name: OSSMALWARE_WORKER_TOPIC
-          value: gcppubsub://projects/ossf-malware-analysis/topics/workers
+          value: gcppubsub://projects/khulnasoft-malware-analysis/topics/workers
         - name: LOGGER_ENV
           value: prod

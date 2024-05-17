@@ -44,7 +44,7 @@ func (m *ManagerConfig) SkipVersion(version string) bool {
 }
 
 // supportedPkgManagers lists the package managers Package Analysis can
-// analyze. It is a map from khulnasoft-lab/package-feeds package types, to a
+// analyze. It is a map from ossf/package-feeds package types, to a
 // config for the package manager's feed.
 var supportedPkgManagers = map[string]*ManagerConfig{
 	"npm":      {Ecosystem: pkgecosystem.NPM},
@@ -60,7 +60,7 @@ var supportedPkgManagers = map[string]*ManagerConfig{
 func main() {
 	subscriptionURL := os.Getenv("OSSMALWARE_SUBSCRIPTION_URL")
 	topicURL := os.Getenv("OSSMALWARE_WORKER_TOPIC")
-	log.Initialize(os.Getenv("LOGGER_ENV")).Desugar()
+	log.Initialize(os.Getenv("LOGGER_ENV"))
 
 	err := listenLoop(subscriptionURL, topicURL)
 	if err != nil {

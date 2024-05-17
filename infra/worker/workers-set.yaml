@@ -5,7 +5,7 @@ metadata:
   labels:
     app: workers
 spec:
-  replicas: 1500
+  replicas: 200
   selector:
     matchLabels:
       app: workers
@@ -22,23 +22,27 @@ spec:
         env:
         - name: OSSMALWARE_WORKER_SUBSCRIPTION
           # See: https://pkg.go.dev/gocloud.dev/pubsub/gcppubsub#URLOpener
-          value: gcppubsub://projects/ossf-malware-analysis/subscriptions/workers?nacklazy=1
+          value: gcppubsub://projects/khulnasoft-malware-analysis/subscriptions/workers?nacklazy=1
         - name: OSSF_MALWARE_ANALYSIS_RESULTS
-          value: gs://ossf-malware-analysis-results
-        - name: OSSF_MALWARE_STATIC_ANALYSIS_RESULTS
-          value: gs://ossf-malware-static-analysis-results
+          value: gs://khulnasoft-malware-analysis-results
+        - name: OSSF_MALWARE_ANALYSIS_EXECUTION_LOGS
+          value: gs://khulnasoft-malware-analysis-execution-logs
         - name: OSSF_MALWARE_ANALYSIS_FILE_WRITE_RESULTS
-          value: gs://ossf-malware-analysis-file-write-results
-        # - name: OSSF_MALWARE_ANALYZED_PACKAGES
-          # value: gs://ossf-malware-analysis-analyzed-packages
+          value: gs://khulnasoft-malware-analysis-file-write-results
+        - name: OSSF_MALWARE_STATIC_ANALYSIS_RESULTS
+          value: gs://ossf-malware-static-analysis-results-v1
+        - name: OSSF_MALWARE_ANALYZED_PACKAGES
+          value: gs://khulnasoft-malware-analysis-analyzed-packages
         - name: LOGGER_ENV
           value: prod
         - name: OSSF_MALWARE_ANALYSIS_PACKAGES
-          value: gs://ossf-malware-analysis-packages
+          value: gs://khulnasoft-malware-analysis-packages
         - name: OSSF_MALWARE_NOTIFICATION_TOPIC
-          value: gcppubsub://projects/ossf-malware-analysis/topics/analysis-notify
+          value: gcppubsub://projects/khulnasoft-malware-analysis/topics/analysis-notify
+        - name: OSSF_MALWARE_USER_AGENT_EXTRA
+          value: "production"
         - name: OSSF_MALWARE_FEATURE_FLAGS
-          value: ""
+          value: "CodeExecution"
         securityContext:
           privileged: true
         volumeMounts:

@@ -9,7 +9,7 @@ This document describes the contribution guidelines for the project.
 
 If you have any contribution-related questions, please get in touch! Here are some ways to reach current contributors
 1. Open a new issue (strongly preferred)
-1. Via the [OpenSSF Securing Critical Projects Working Group](https://github.com/ossf/wg-securing-critical-projects) mailing list or Slack channel
+1. Via the [OpenSSF Securing Critical Projects Working Group](https://github.com/khulnasoft-lab/wg-securing-critical-projects) mailing list or Slack channel
 
 Note: for minor changes (typos, documentation improvements), feel free to open a pull request directly.
 
@@ -51,6 +51,8 @@ $ cd package-analysis
 Prefer smaller PRs to make reviewing easier. Larger changes can be split into smaller PRs by branching off previous (unmerged) branches rather than main.
 
 ### Code style
+
+We generally follow the [Google Go Style Guide](https://google.github.io/styleguide/go/index).
 
 #### Warnings
 

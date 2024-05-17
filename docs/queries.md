@@ -25,7 +25,7 @@ DECLARE PHASE DEFAULT "import";
 
 WITH dns_queries AS (
     SELECT Package.ecosystem, Package.name, Package.version, queries.Hostname as Hostname, QueryType FROM
-        `ossf-malware-analysis.packages`.analysis_for_phase(PHASE) AS t,
+        `khulnasoft-malware-analysis.packages`.analysis_for_phase(PHASE) AS t,
         t.Result.DNS as DNS,
         UNNEST(DNS.Queries) AS queries,
         UNNEST(queries.Types) AS QueryType
@@ -50,11 +50,11 @@ WHERE
   Hostname NOT IN ('gcr.io.default.svc.cluster.local', 'storage.googleapis.com.cluster.local',
                    'storage.googleapis.com.svc.cluster.local', 'gcr.io.cluster.local',
                    'gcr.io.google.internal', 'storage.googleapis.com.default.svc.cluster.local',
-                   'storage.googleapis.com.us-central1-c.c.ossf-malware-analysis.internal',
+                   'storage.googleapis.com.us-central1-c.c.khulnasoft-malware-analysis.internal',
                    'gcr.io.default.svc.cluster.local', 'storage.googleapis.com.google.internal',
-                   'storage.googleapis.com.c.ossf-malware-analysis.internal',
-                   'gcr.io.svc.cluster.internal', 'gcr.io.us-central1-c.c.ossf-malware-analysis.internal',
-                   'gcr.io.svc.cluster.local', 'gcr.io.c.ossf-malware-analysis.internal',
+                   'storage.googleapis.com.c.khulnasoft-malware-analysis.internal',
+                   'gcr.io.svc.cluster.internal', 'gcr.io.us-central1-c.c.khulnasoft-malware-analysis.internal',
+                   'gcr.io.svc.cluster.local', 'gcr.io.c.khulnasoft-malware-analysis.internal',
                    'registry.npmjs.org', 'storage.googleapis.com', 'files.pythonhosted.org',
                    'index.rubygems.org', 'pypi.org', 'rubygems.org', 'packagist.org',
                    'repo.packagist.org', 'api.github.com', 'github.com', 'bitbucket.org',
@@ -100,7 +100,7 @@ SELECT
   Package.version,
   dedupe(ARRAY_AGG(sockets)) as sockets
 FROM
-  `ossf-malware-analysis.packages`.analysis_for_phase(PHASE) AS t,
+  `khulnasoft-malware-analysis.packages`.analysis_for_phase(PHASE) AS t,
   t.Result.Sockets as sockets
 WHERE
   (
@@ -110,7 +110,7 @@ WHERE
       NOT EXISTS (
         SELECT sk
         FROM
-          `ossf-malware-analysis.packages`.analysis_for_phase(PHASE) AS t,
+          `khulnasoft-malware-analysis.packages`.analysis_for_phase(PHASE) AS t,
           t.Result.Sockets AS sk
         WHERE ARRAY_LENGTH(sk.Hostnames) != 0 AND sk.Address = sockets.Address
       )
@@ -119,7 +119,7 @@ WHERE
     OR (
       SELECT COUNT(hn)
       FROM
-        `ossf-malware-analysis.packages`.analysis_for_phase(PHASE) AS t,
+        `khulnasoft-malware-analysis.packages`.analysis_for_phase(PHASE) AS t,
         UNNEST(t.Result.Sockets) AS sk,
         UNNEST(sk.Hostnames) AS hn
       WHERE hn IN UNNEST(sockets.Hostnames)
@@ -336,7 +336,7 @@ LANGUAGE js AS r"""
 WITH commands_by_pkg AS (
     SELECT extract_1command((commands), Package.Version) AS command, Package.Ecosystem AS ecosystem, Package.Name AS name, Package.Version AS version, get_env((commands), "npm_package_name") AS executer_name
     FROM
-    `ossf-malware-analysis.packages`.analysis_for_phase(PHASE) AS t,
+    `khulnasoft-malware-analysis.packages`.analysis_for_phase(PHASE) AS t,
     t.Result.Commands as commands
     WHERE NOT is_known_good(Package.Name, Package.Version, commands, Package.Ecosystem) AND TIMESTAMP_ADD(CreatedTimestamp, INTERVAL LOOKBACK_DAYS DAY) > CURRENT_TIMESTAMP())
 SELECT command, COUNT(1) AS occurance, ARRAY_AGG(CONCAT(name, "@", version, "--", executer_name))

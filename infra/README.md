@@ -10,7 +10,7 @@ The Production cluster runs in GCP.
 To access the cluster, run:
 
 ```shell
-$ gcloud container clusters get-credentials analysis-cluster --zone=us-central1-c --project=ossf-malware-analysis
+$ gcloud container clusters get-credentials analysis-cluster --zone=us-central1-c --project=khulnasoft-malware-analysis
 ```
 
 ### Updating Container Images
