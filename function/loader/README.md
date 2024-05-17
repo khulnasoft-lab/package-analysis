@@ -19,7 +19,7 @@ gcloud functions deploy load-data \
     --runtime=go121 \
     --timeout=120s \
     --trigger-topic=load-data \
-    --set-env-vars=OSSF_MALWARE_ANALYSIS_RESULTS=khulnasoft-malware-analysis-results,GCP_PROJECT=khulnasoft-malware-analysis
+    --set-env-vars=OSSF_MALWARE_ANALYSIS_RESULTS=ossf-malware-analysis-results,GCP_PROJECT=khulnasoft-malware-analysis
 ```
 
 ## Static analysis results

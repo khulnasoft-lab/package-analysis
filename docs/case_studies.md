@@ -8,7 +8,7 @@ Discord attacks are focused on attacking [Discord](https://discord.com) accounts
 
 ### PyPI: discordcmd
 
-*2022-02-18*, [Analysis Result](https://storage.googleapis.com/khulnasoft-malware-analysis-results/pypi/discordcmd/0.0.2.json)
+*2022-02-18*, [Analysis Result](https://storage.googleapis.com/ossf-malware-analysis-results/pypi/discordcmd/0.0.2.json)
 
 This Python package will attack the desktop client for Discord on Windows. It was found by spotting the unusual requests to raw.githubusercontent.com, Discord API, and ipinfo.io.
 
@@ -24,7 +24,7 @@ It grabbed the data associated with the token from the Discord API  and exfiltra
 
 ### NPM: colorsss
 
-*2022-03-05*, [Analysis Result](https://storage.googleapis.com/khulnasoft-malware-analysis-results/npm/colorsss/0.0.2.json)
+*2022-03-05*, [Analysis Result](https://storage.googleapis.com/ossf-malware-analysis-results/npm/colorsss/0.0.2.json)
 
 Similar to discordcmd above, this NPM package attempts to steal a Windows user's Discord account token and was discovered by identifying calls to the Discord API. This package:
 
@@ -38,7 +38,7 @@ A remote shell is used by an attacker to provide access to a [command shell](htt
 
 ### NPM: @roku-web-core/ajax
 
-*2022-03-08*, [Analysis Result](https://storage.googleapis.com/khulnasoft-malware-analysis-results/npm/%40roku-web-core/ajax/1.100000000000003.100000000000003.json)
+*2022-03-08*, [Analysis Result](https://storage.googleapis.com/ossf-malware-analysis-results/npm/%40roku-web-core/ajax/1.100000000000003.100000000000003.json)
 
 During install, this NPM package exfiltrates details of the machine it is running on, and then opens a reverse shell, allowing the remote execution of commands.
 
@@ -48,7 +48,7 @@ This package was discovered from its requests to an attacker-controlled address.
 
 ### PyPI: secrevthree
 
-*2022-03-14*, [Analysis Result](https://storage.googleapis.com/khulnasoft-malware-analysis-results/pypi/secrevthree/0.0.2.json)
+*2022-03-14*, [Analysis Result](https://storage.googleapis.com/ossf-malware-analysis-results/pypi/secrevthree/0.0.2.json)
 
 This package opens a simple reverse shell when a specific module is imported from the library, allowing remote command execution. It uses a simple obfuscation technique to make it harder for a reader to notice.
 
@@ -58,7 +58,7 @@ This package was discovered from the request to the attacker-controlled address.
 
 ### NPM: random-vouchercode-generator
 
-*2022-03-14*, [Analysis Result](https://storage.googleapis.com/khulnasoft-malware-analysis-results/npm/random-vouchercode-generator/1.0.3.json)
+*2022-03-14*, [Analysis Result](https://storage.googleapis.com/ossf-malware-analysis-results/npm/random-vouchercode-generator/1.0.3.json)
 
 When the library is imported it queries a server running on the Heroku cloud platform. The server response includes a command and a flag indicating whether or not the command should be run.
 

@@ -24,7 +24,7 @@ spec:
           # See: https://pkg.go.dev/gocloud.dev/pubsub/gcppubsub#URLOpener
           value: gcppubsub://projects/khulnasoft-malware-analysis/subscriptions/workers?nacklazy=1
         - name: OSSF_MALWARE_ANALYSIS_RESULTS
-          value: gs://khulnasoft-malware-analysis-results
+          value: gs://ossf-malware-analysis-results
         - name: OSSF_MALWARE_ANALYSIS_EXECUTION_LOGS
           value: gs://khulnasoft-malware-analysis-execution-logs
         - name: OSSF_MALWARE_ANALYSIS_FILE_WRITE_RESULTS
