@@ -10,7 +10,7 @@ COPY . ./
 RUN CGO_ENABLED=0 go build -o scheduler ./cmd/scheduler/main.go
 
 
-FROM gcr.io/distroless/base:nonroot@sha256:bc84925113289d139a9ef2f309f0dd7ac46ea7b786f172ba9084ffdb4cbd9490
+FROM gcr.io/distroless/base:nonroot@sha256:53745e95f227cd66e8058d52f64efbbeb6c6af2c193e3c16981137e5083e6a32
 
 COPY --from=build /src/scheduler /usr/local/bin/scheduler
 
