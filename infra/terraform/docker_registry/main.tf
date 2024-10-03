@@ -4,7 +4,7 @@ resource "google_artifact_registry_repository" "gcr_docker" {
   project = var.project
   location = "us"
   repository_id = "gcr.io"
-  description = "gcr.io docker container registry for OSSF Malware Analysis Images"
+  description = "gcr.io docker container registry for KHULNASOFT Malware Analysis Images"
   format = "DOCKER"
 }
 
@@ -14,7 +14,7 @@ resource "google_artifact_registry_repository" "us_gcr_docker" {
   project = var.project
   location = "us"
   repository_id = "us.gcr.io"
-  description = "us.gcr.io docker container registry for OSSF Malware Analysis Images"
+  description = "us.gcr.io docker container registry for KHULNASOFT Malware Analysis Images"
   format = "DOCKER"
 }
 

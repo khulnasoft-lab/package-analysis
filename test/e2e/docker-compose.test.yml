@@ -3,7 +3,7 @@ services:
   analysis:
     image: ghcr.io/khulnasoft-lab/analysis:test
     environment:
-      OSSF_SANDBOX_NOPULL: "true"
+      KHULNASOFT_SANDBOX_NOPULL: "true"
     # for mounting local sandbox images inside container
     volumes:
       - "/var/lib/containers:/var/lib/containers"

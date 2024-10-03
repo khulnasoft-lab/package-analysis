@@ -2,15 +2,15 @@
 
 # Package Analysis
 
-The Package Analysis project analyses the capabilities of packages available on open source repositories. The project looks for behaviors that indicate malicious software: 
+The Package Analysis project analyses the capabilities of packages available on open source repositories. The project looks for behaviors that indicate malicious software:
 
-- What files do they access? 
-- What addresses do they connect to? 
-- What commands do they run? 
+- What files do they access?
+- What addresses do they connect to?
+- What commands do they run?
 
-The project also tracks changes in how packages behave over time, to identify when previously safe software begins acting suspiciously. 
+The project also tracks changes in how packages behave over time, to identify when previously safe software begins acting suspiciously.
 
-This effort is meant to improve the security of open source software by detecting malicious behavior, informing consumers selecting packages, and providing researchers with data about the ecosystem. 
+This effort is meant to improve the security of open source software by detecting malicious behavior, informing consumers selecting packages, and providing researchers with data about the ecosystem.
 
 This code is designed to work with the
 [Package Feeds](https://github.com/khulnasoft-lab/package-feeds) project,
@@ -52,6 +52,7 @@ as network connections that can be used to leak sensitive data or allow remote
 access.
 
 ## Public Data
+
 This data is available in the public [BigQuery dataset](https://console.cloud.google.com/bigquery?d=packages&p=khulnasoft-malware-analysis&t=analysis&page=table).
 
 ## Configuration
@@ -75,15 +76,15 @@ An example of these variables can be found in the
 the data coming out of scheduler. Values should follow
 [goclouddev subscriptions](https://gocloud.dev/howto/pubsub/subscribe/).
 
-`OSSF_MALWARE_ANALYSIS_RESULTS` - **OPTIONAL**: Can be used to set the bucket
+`KHULNASOFT_MALWARE_ANALYSIS_RESULTS` - **OPTIONAL**: Can be used to set the bucket
 URL to publish results to. Values should follow
 [goclouddev buckets](https://gocloud.dev/howto/blob/).
 
-`OSSF_MALWARE_ANALYSIS_PACKAGES` - **OPTIONAL**: Can be used to set the bucket
+`KHULNASOFT_MALWARE_ANALYSIS_PACKAGES` - **OPTIONAL**: Can be used to set the bucket
 URL to get custom uploaded packages from. Values should follow
 [goclouddev buckets](https://gocloud.dev/howto/blob/).
 
-`OSSF_MALWARE_NOTIFICATION_TOPIC` - **OPTIONAL**: Can be used to set the topic URL to
+`KHULNASOFT_MALWARE_NOTIFICATION_TOPIC` - **OPTIONAL**: Can be used to set the topic URL to
 publish messages for consumption after a new package analysis is complete. Values should follow
 [goclouddev publishing](https://gocloud.dev/howto/pubsub/publish/).
 
@@ -132,7 +133,6 @@ $ scripts/run_analysis.sh -ecosystem pypi -package Django -version 4.1.3
 To run analysis on a local PyPi package named 'test',
 located in local archive `/path/to/test.whl`
 
-
 ```bash
 $ scripts/run_analysis.sh -ecosystem pypi -package test -local /path/to/test.whl
 ```
@@ -148,6 +148,7 @@ allows caching the sandbox images and supports local developement.
 ## Development
 
 ### Testing
+
 See `sample_packages/README.md` for how to use a sample package that simulates malicious activity for testing purposes.
 
 ### Required Dependencies
@@ -157,6 +158,6 @@ See `sample_packages/README.md` for how to use a sample package that simulates m
 
 # Contributing
 
-If you want to get involved or have ideas you'd like to chat about, we discuss this project in the [OSSF Securing Critical Projects Working Group](https://github.com/ossf/wg-securing-critical-projects) meetings.
+If you want to get involved or have ideas you'd like to chat about, we discuss this project in the [KHULNASOFT Securing Critical Projects Working Group](https://github.com/ossf/wg-securing-critical-projects) meetings.
 
 See the [Community Calendar](https://calendar.google.com/calendar?cid=czYzdm9lZmhwNWk5cGZsdGI1cTY3bmdwZXNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ) for the schedule and meeting invitations.

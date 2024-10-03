@@ -125,7 +125,7 @@ func handleMessage(ctx context.Context, msg *pubsub.Message, cfg *config, packag
 
 	// propogate user agent extras to the static analysis sandbox if it is set.
 	if cfg.userAgentExtra != "" {
-		staticSandboxOpts = append(staticSandboxOpts, sandbox.SetEnv("OSSF_MALWARE_USER_AGENT_EXTRA", cfg.userAgentExtra))
+		staticSandboxOpts = append(staticSandboxOpts, sandbox.SetEnv("KHULNASOFT_MALWARE_USER_AGENT_EXTRA", cfg.userAgentExtra))
 	}
 
 	// run both dynamic and static analysis regardless of error status of either
@@ -241,7 +241,7 @@ func main() {
 
 	http.DefaultTransport = useragent.DefaultRoundTripper(http.DefaultTransport, cfg.userAgentExtra)
 
-	if err := featureflags.Update(os.Getenv("OSSF_MALWARE_FEATURE_FLAGS")); err != nil {
+	if err := featureflags.Update(os.Getenv("KHULNASOFT_MALWARE_FEATURE_FLAGS")); err != nil {
 		slog.Error("Failed to parse feature flags", "error", err)
 		os.Exit(1)
 	}
@@ -250,7 +250,7 @@ func main() {
 
 	// If configured, start a webserver so that Go's pprof can be accessed for
 	// debugging and profiling.
-	if os.Getenv("OSSF_MALWARE_ANALYSIS_ENABLE_PROFILER") != "" {
+	if os.Getenv("KHULNASOFT_MALWARE_ANALYSIS_ENABLE_PROFILER") != "" {
 		go func() {
 			slog.Info("Starting profiler")
 			http.ListenAndServe(":6060", nil)

@@ -5,7 +5,7 @@ provider "google" {
 
 terraform {
   backend "gcs" {
-    bucket = "ossf-analysis-tf-state"
+    bucket = "khulnasoft-analysis-tf-state"
     prefix = "terraform/state"
   }
 }

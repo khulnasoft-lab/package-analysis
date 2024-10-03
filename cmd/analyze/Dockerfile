@@ -40,4 +40,4 @@ RUN chmod 755 /usr/local/bin/runsc_compat.sh && \
     chmod 644 /usr/local/etc/iptables.rules /etc/cni/net.d/podman-analysis.conflist
 
 ARG SANDBOX_IMAGE_TAG
-ENV OSSF_SANDBOX_IMAGE_TAG=${SANDBOX_IMAGE_TAG}
+ENV KHULNASOFT_SANDBOX_IMAGE_TAG=${SANDBOX_IMAGE_TAG}
