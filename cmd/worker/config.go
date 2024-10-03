@@ -61,20 +61,20 @@ func resultStoreForEnv(key string) *resultstore.ResultStore {
 func configFromEnv() *config {
 	return &config{
 		imageSpec: sandboxImageSpec{
-			tag:    os.Getenv("OSSF_SANDBOX_IMAGE_TAG"),
-			noPull: os.Getenv("OSSF_SANDBOX_NOPULL") != "",
+			tag:    os.Getenv("KHULNASOFT_SANDBOX_IMAGE_TAG"),
+			noPull: os.Getenv("KHULNASOFT_SANDBOX_NOPULL") != "",
 		},
 		resultStores: &worker.ResultStores{
-			AnalyzedPackage: resultStoreForEnv("OSSF_MALWARE_ANALYZED_PACKAGES"),
-			DynamicAnalysis: resultStoreForEnv("OSSF_MALWARE_ANALYSIS_RESULTS"),
-			ExecutionLog:    resultStoreForEnv("OSSF_MALWARE_ANALYSIS_EXECUTION_LOGS"),
-			FileWrites:      resultStoreForEnv("OSSF_MALWARE_ANALYSIS_FILE_WRITE_RESULTS"),
-			StaticAnalysis:  resultStoreForEnv("OSSF_MALWARE_STATIC_ANALYSIS_RESULTS"),
+			AnalyzedPackage: resultStoreForEnv("KHULNASOFT_MALWARE_ANALYZED_PACKAGES"),
+			DynamicAnalysis: resultStoreForEnv("KHULNASOFT_MALWARE_ANALYSIS_RESULTS"),
+			ExecutionLog:    resultStoreForEnv("KHULNASOFT_MALWARE_ANALYSIS_EXECUTION_LOGS"),
+			FileWrites:      resultStoreForEnv("KHULNASOFT_MALWARE_ANALYSIS_FILE_WRITE_RESULTS"),
+			StaticAnalysis:  resultStoreForEnv("KHULNASOFT_MALWARE_STATIC_ANALYSIS_RESULTS"),
 		},
 		subURL:               os.Getenv("OSSMALWARE_WORKER_SUBSCRIPTION"),
-		packagesBucket:       os.Getenv("OSSF_MALWARE_ANALYSIS_PACKAGES"),
-		notificationTopicURL: os.Getenv("OSSF_MALWARE_NOTIFICATION_TOPIC"),
+		packagesBucket:       os.Getenv("KHULNASOFT_MALWARE_ANALYSIS_PACKAGES"),
+		notificationTopicURL: os.Getenv("KHULNASOFT_MALWARE_NOTIFICATION_TOPIC"),
 
-		userAgentExtra: os.Getenv("OSSF_MALWARE_USER_AGENT_EXTRA"),
+		userAgentExtra: os.Getenv("KHULNASOFT_MALWARE_USER_AGENT_EXTRA"),
 	}
 }

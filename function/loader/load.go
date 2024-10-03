@@ -46,7 +46,7 @@ func runAndWaitForJob(ctx context.Context, loader *bigquery.Loader) error {
 
 func Load(ctx context.Context, m PubSubMessage) error {
 	project := os.Getenv("GCP_PROJECT")
-	bucket := os.Getenv("OSSF_MALWARE_ANALYSIS_RESULTS")
+	bucket := os.Getenv("KHULNASOFT_MALWARE_ANALYSIS_RESULTS")
 
 	bq, err := bigquery.NewClient(ctx, project)
 	if err != nil {
@@ -77,7 +77,7 @@ func Load(ctx context.Context, m PubSubMessage) error {
 
 func LoadStaticAnalysis(ctx context.Context, m PubSubMessage) error {
 	project := os.Getenv("GCP_PROJECT")
-	bucket := os.Getenv("OSSF_MALWARE_STATIC_ANALYSIS_RESULTS")
+	bucket := os.Getenv("KHULNASOFT_MALWARE_STATIC_ANALYSIS_RESULTS")
 
 	bq, err := bigquery.NewClient(ctx, project)
 	if err != nil {

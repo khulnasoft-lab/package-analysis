@@ -11,7 +11,7 @@ _TOPIC = os.getenv(
     'OSSMALWARE_WORKER_TOPIC',
     'gcppubsub://projects/khulnasoft-malware-analysis/topics/workers')
 _PACKAGES_BUCKET = os.getenv(
-    'OSSF_MALWARE_ANALYSIS_PACKAGES', 'gs://khulnasoft-malware-analysis-packages')
+    'KHULNASOFT_MALWARE_ANALYSIS_PACKAGES', 'gs://khulnasoft-malware-analysis-packages')
 _NPM_IGNORE_KEYS = ('modified', 'created')
 
 

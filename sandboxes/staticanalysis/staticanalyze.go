@@ -105,7 +105,7 @@ func run() (err error) {
 
 	log.Initialize(os.Getenv("LOGGER_ENV"))
 
-	userAgentExtra := os.Getenv("OSSF_MALWARE_USER_AGENT_EXTRA")
+	userAgentExtra := os.Getenv("KHULNASOFT_MALWARE_USER_AGENT_EXTRA")
 	http.DefaultTransport = useragent.DefaultRoundTripper(http.DefaultTransport, userAgentExtra)
 
 	flag.TextVar(&ecosystem, "ecosystem", pkgecosystem.None, fmt.Sprintf("package ecosystem. Can be %s (required)", pkgecosystem.SupportedEcosystemsStrings))
